@@ -346,7 +346,7 @@ resource "aws_api_gateway_method" "ban_user_root_options" {
   rest_api_id        = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id        = aws_api_gateway_resource.ban_user_root.id
   http_method        = "OPTIONS"
-  authorization      = "NONE"
+  authorization      = "NONE" # oak9: authorization should be set to any of aws_iam, custom, cognito_user_pools
   request_parameters = { "method.request.header.JWT_TOKEN" = false }
 
 }
