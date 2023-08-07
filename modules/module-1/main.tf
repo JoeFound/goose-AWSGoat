@@ -3384,6 +3384,7 @@ resource "aws_security_group" "goat_sg" {
     to_port     = 22
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
+  # oak9: Explicitly define source IP addresses for ingress rules
   }
   egress {
     from_port   = 0
