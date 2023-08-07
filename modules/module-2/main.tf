@@ -278,6 +278,7 @@ resource "aws_iam_role" "ec2-deployer-role" {
 resource "aws_iam_policy" "ec2_deployer_admin_policy" {
   name = "ec2DeployerAdmin-policy"
   policy = jsonencode({
+    # oak9: Avoid using wildcards ['*'] in IAM actions
     "Statement" : [
       {
         "Action" : [
