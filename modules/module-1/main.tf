@@ -83,7 +83,7 @@ resource "aws_api_gateway_method" "endpoint" {
   rest_api_id   = aws_api_gateway_rest_api.api.id
   resource_id   = aws_api_gateway_resource.endpoint.id
   http_method   = "GET"
-  authorization = "NONE"
+  authorization = "NONE" # oak9: authorization should be set to any of aws_iam, custom, cognito_user_pools
 }
 
 resource "aws_api_gateway_method_response" "endpoint" {
