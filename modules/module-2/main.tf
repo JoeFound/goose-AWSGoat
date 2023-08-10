@@ -207,6 +207,7 @@ resource "aws_iam_role_policy_attachment" "ecs-instance-role-attachment-3" {
 resource "aws_iam_policy" "ecs_instance_policy" {
   name = "aws-goat-instance-policy"
   policy = jsonencode({
+    # oak9: Avoid using wildcards ['*'] in IAM actions
     "Statement" : [
       {
         "Action" : [
