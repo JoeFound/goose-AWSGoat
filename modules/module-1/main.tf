@@ -346,7 +346,7 @@ resource "aws_api_gateway_method" "ban_user_root_options" {
   rest_api_id        = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id        = aws_api_gateway_resource.ban_user_root.id
   http_method        = "OPTIONS"
-  authorization      = "NONE"
+  authorization      = "AWS_IAM"
   request_parameters = { "method.request.header.JWT_TOKEN" = false }
 
 }
