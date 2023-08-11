@@ -3128,6 +3128,8 @@ resource "aws_iam_role_policy_attachment" "blog_app_policy" {
 resource "aws_iam_policy" "lambda_data_policies" {
   name = "lambda-data-policies"
   policy = jsonencode({
+    # oak9: Explicitly define resources in IAM policies
+    # oak9: Avoid using wildcards ['*'] in IAM actions
     "Statement" : [
       {
         "Action" : [
@@ -3387,6 +3389,7 @@ resource "aws_security_group" "goat_sg" {
     to_port     = 22
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
+  # oak9: Explicitly define source IP addresses for ingress rules
   }
   egress {
     from_port   = 0
@@ -3439,6 +3442,7 @@ resource "aws_iam_role_policy_attachment" "goat_policy" {
 resource "aws_iam_policy" "goat_inline_policy_2" {
   name = "dev-ec2-lambda-policies"
   policy = jsonencode({
+    # oak9: Explicitly define resources in IAM policies
     "Statement" : [
       {
         "Action" : [
