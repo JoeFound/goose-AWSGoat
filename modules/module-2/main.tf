@@ -207,6 +207,8 @@ resource "aws_iam_role_policy_attachment" "ecs-instance-role-attachment-3" {
 resource "aws_iam_policy" "ecs_instance_policy" {
   name = "aws-goat-instance-policy"
   policy = jsonencode({
+    # oak9: Explicitly define resources in IAM policies
+    # oak9: Avoid using wildcards ['*'] in IAM actions
     "Statement" : [
       {
         "Action" : [
@@ -278,6 +280,8 @@ resource "aws_iam_role" "ec2-deployer-role" {
 resource "aws_iam_policy" "ec2_deployer_admin_policy" {
   name = "ec2DeployerAdmin-policy"
   policy = jsonencode({
+    # oak9: Explicitly define resources in IAM policies
+    # oak9: Avoid using wildcards ['*'] in IAM actions
     "Statement" : [
       {
         "Action" : [
@@ -422,7 +426,7 @@ resource "aws_ecs_service" "worker" {
 
 resource "aws_alb" "application_load_balancer" {
   name               = "aws-goat-m2-alb"
-  internal           = false
+  internal           = true
   load_balancer_type = "application"
   subnets            = [aws_subnet.lab-subnet-public-1.id, aws_subnet.lab-subnet-public-1b.id]
   security_groups    = [aws_security_group.load_balancer_security_group.id]
@@ -447,7 +451,7 @@ resource "aws_lb_target_group" "target_group" {
 resource "aws_lb_listener" "listener" {
   load_balancer_arn = aws_alb.application_load_balancer.id
   port              = "80"
-  protocol          = "HTTP"
+  protocol          = "HTTP" # oak9: protocol should be set to any of https, tls
 
   default_action {
     type             = "forward"
