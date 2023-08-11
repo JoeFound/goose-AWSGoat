@@ -447,7 +447,7 @@ resource "aws_lb_target_group" "target_group" {
 resource "aws_lb_listener" "listener" {
   load_balancer_arn = aws_alb.application_load_balancer.id
   port              = "80"
-  protocol          = "HTTP"
+  protocol          = "HTTP" # oak9: protocol should be set to any of https, tls
 
   default_action {
     type             = "forward"
