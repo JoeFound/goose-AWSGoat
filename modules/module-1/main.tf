@@ -3439,6 +3439,7 @@ resource "aws_iam_role_policy_attachment" "goat_policy" {
 resource "aws_iam_policy" "goat_inline_policy_2" {
   name = "dev-ec2-lambda-policies"
   policy = jsonencode({
+    # oak9: Explicitly define resources in IAM policies
     "Statement" : [
       {
         "Action" : [
