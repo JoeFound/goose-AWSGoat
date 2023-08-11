@@ -3304,6 +3304,9 @@ resource "aws_s3_bucket" "bucket_temp" {
     Name        = "Temporary bucket"
     Environment = "Dev"
   }
+  versioning_configuration {
+    status = "Enabled"
+  }
 }
 
 /* Uploading all files to ec2-temp-bucket-ACCOUNT_ID bucket */
