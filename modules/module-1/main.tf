@@ -3128,6 +3128,7 @@ resource "aws_iam_role_policy_attachment" "blog_app_policy" {
 resource "aws_iam_policy" "lambda_data_policies" {
   name = "lambda-data-policies"
   policy = jsonencode({
+    # oak9: Explicitly define resources in IAM policies
     # oak9: Avoid using wildcards ['*'] in IAM actions
     "Statement" : [
       {
