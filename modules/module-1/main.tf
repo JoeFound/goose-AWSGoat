@@ -193,7 +193,7 @@ resource "aws_api_gateway_method" "proxy_xss_root_post" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.xss_root.id
   http_method   = "POST"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 }
 resource "aws_api_gateway_method_response" "proxy_xss_root_post_response_200" {
   rest_api_id = aws_api_gateway_rest_api.apiLambda_ba.id
@@ -216,7 +216,7 @@ resource "aws_api_gateway_method" "xss_root_options" {
   rest_api_id        = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id        = aws_api_gateway_resource.xss_root.id
   http_method        = "OPTIONS"
-  authorization      = "NONE"
+  authorization      = "AWS_IAM"
   request_parameters = { "method.request.header.JWT_TOKEN" = false }
 
 }
@@ -322,7 +322,7 @@ resource "aws_api_gateway_method" "proxy_ban_user_root_post" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.ban_user_root.id
   http_method   = "POST"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "proxy_ban_user_root_post_response_200" {
@@ -460,7 +460,7 @@ resource "aws_api_gateway_method" "proxy_change_password_root_post" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.change_password_root.id
   http_method   = "POST"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "proxy_change_password_root_post_response_200" {
@@ -484,7 +484,7 @@ resource "aws_api_gateway_method" "change_password_root_options" {
   rest_api_id        = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id        = aws_api_gateway_resource.change_password_root.id
   http_method        = "OPTIONS"
-  authorization      = "NONE"
+  authorization      = "AWS_IAM"
   request_parameters = { "method.request.header.JWT_TOKEN" = false }
 
 }
@@ -601,7 +601,7 @@ resource "aws_api_gateway_method" "proxy_dump_root_get" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.dump_root.id
   http_method   = "GET"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "proxy_dump_root_get_response_200" {
@@ -626,7 +626,7 @@ resource "aws_api_gateway_method" "dump_root_options" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.dump_root.id
   http_method   = "OPTIONS"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "dump_root_options_response_200" {
@@ -743,7 +743,7 @@ resource "aws_api_gateway_method" "proxy_list_posts_root_post" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.list_posts_root.id
   http_method   = "POST"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "proxy_list_posts_root_post_response_200" {
@@ -768,7 +768,7 @@ resource "aws_api_gateway_method" "list_posts_root_options" {
   rest_api_id        = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id        = aws_api_gateway_resource.list_posts_root.id
   http_method        = "OPTIONS"
-  authorization      = "NONE"
+  authorization      = "AWS_IAM"
   request_parameters = { "method.request.header.JWT_TOKEN" = false }
 
 }
@@ -878,7 +878,7 @@ resource "aws_api_gateway_method" "proxy_login_root_post" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.login_root.id
   http_method   = "POST"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "proxy_login_root_post_response_200" {
@@ -902,7 +902,7 @@ resource "aws_api_gateway_method" "login_root_options" {
   rest_api_id        = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id        = aws_api_gateway_resource.login_root.id
   http_method        = "OPTIONS"
-  authorization      = "NONE"
+  authorization      = "AWS_IAM"
   request_parameters = { "method.request.header.JWT_TOKEN" = false }
 
 }
@@ -1018,7 +1018,7 @@ resource "aws_api_gateway_method" "proxy_register_root_post" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.register_root.id
   http_method   = "POST"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "proxy_register_root_post_response_200" {
@@ -1042,7 +1042,7 @@ resource "aws_api_gateway_method" "register_root_options" {
   rest_api_id        = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id        = aws_api_gateway_resource.register_root.id
   http_method        = "OPTIONS"
-  authorization      = "NONE"
+  authorization      = "AWS_IAM"
   request_parameters = { "method.request.header.JWT_TOKEN" = false }
 }
 resource "aws_api_gateway_method_response" "register_root_options_response_200" {
@@ -1152,7 +1152,7 @@ resource "aws_api_gateway_method" "proxy_save_post_root_post" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.save_post_root.id
   http_method   = "POST"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "proxy_save_post_root_post_response_200" {
@@ -1176,7 +1176,7 @@ resource "aws_api_gateway_method" "save_post_root_options" {
   rest_api_id        = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id        = aws_api_gateway_resource.save_post_root.id
   http_method        = "OPTIONS"
-  authorization      = "NONE"
+  authorization      = "AWS_IAM"
   request_parameters = { "method.request.header.JWT_TOKEN" = false }
 
 }
@@ -1289,7 +1289,7 @@ resource "aws_api_gateway_method" "proxy_verify_root_post" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.verify_root.id
   http_method   = "POST"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "proxy_verify_root_post_response_200" {
@@ -1313,7 +1313,7 @@ resource "aws_api_gateway_method" "verify_root_options" {
   rest_api_id        = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id        = aws_api_gateway_resource.verify_root.id
   http_method        = "OPTIONS"
-  authorization      = "NONE"
+  authorization      = "AWS_IAM"
   request_parameters = { "method.request.header.JWT_TOKEN" = false }
 
 }
@@ -1427,7 +1427,7 @@ resource "aws_api_gateway_method" "proxy_save_content_root_get" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.save_content_root.id
   http_method   = "GET"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "proxy_save_content_root_get_response_200" {
@@ -1451,7 +1451,7 @@ resource "aws_api_gateway_method" "save_content_options" {
   rest_api_id        = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id        = aws_api_gateway_resource.save_content_root.id
   http_method        = "OPTIONS"
-  authorization      = "NONE"
+  authorization      = "AWS_IAM"
   request_parameters = { "method.request.header.JWT_TOKEN" = false }
 
 }
@@ -1509,7 +1509,7 @@ resource "aws_api_gateway_method" "proxy_save_content_root_post" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.save_content_root.id
   http_method   = "POST"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "proxy_save_content_root_post_response_200" {
@@ -1617,7 +1617,7 @@ resource "aws_api_gateway_method" "proxy_search_author_root_post" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.search_author_root.id
   http_method   = "POST"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "proxy_search_author_root_post_response_200" {
@@ -1641,7 +1641,7 @@ resource "aws_api_gateway_method" "search_author_options" {
   rest_api_id        = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id        = aws_api_gateway_resource.search_author_root.id
   http_method        = "OPTIONS"
-  authorization      = "NONE"
+  authorization      = "AWS_IAM"
   request_parameters = { "method.request.header.JWT_TOKEN" = false }
 
 }
@@ -1747,7 +1747,7 @@ resource "aws_api_gateway_method" "proxy_reset_password_root_post" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.reset_password_root.id
   http_method   = "POST"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "proxy_reset_password_root_post_response_200" {
@@ -1772,7 +1772,7 @@ resource "aws_api_gateway_method" "reset_password_root_options" {
   rest_api_id        = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id        = aws_api_gateway_resource.reset_password_root.id
   http_method        = "OPTIONS"
-  authorization      = "NONE"
+  authorization      = "AWS_IAM"
   request_parameters = { "method.request.header.JWT_TOKEN" = false }
 
 }
@@ -1879,7 +1879,7 @@ resource "aws_api_gateway_method" "proxy_get_users_root_post" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.get_users_root.id
   http_method   = "POST"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "proxy_get_users_root_post_response_200" {
@@ -1904,7 +1904,7 @@ resource "aws_api_gateway_method" "get_users_root_options" {
   rest_api_id        = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id        = aws_api_gateway_resource.get_users_root.id
   http_method        = "OPTIONS"
-  authorization      = "NONE"
+  authorization      = "AWS_IAM"
   request_parameters = { "method.request.header.JWT_TOKEN" = false }
 
 }
@@ -2011,7 +2011,7 @@ resource "aws_api_gateway_method" "proxy_unban_user_root_post" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.unban_user_root.id
   http_method   = "POST"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "proxy_unban_user_root_post_response_200" {
@@ -2035,7 +2035,7 @@ resource "aws_api_gateway_method" "unban_user_root_options" {
   rest_api_id        = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id        = aws_api_gateway_resource.unban_user_root.id
   http_method        = "OPTIONS"
-  authorization      = "NONE"
+  authorization      = "AWS_IAM"
   request_parameters = { "method.request.header.JWT_TOKEN" = false }
 
 }
@@ -2145,7 +2145,7 @@ resource "aws_api_gateway_method" "proxy_user_details_modal_root_post" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.user_details_modal_root.id
   http_method   = "POST"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "proxy_user_details_modal_root_post_response_200" {
@@ -2278,7 +2278,7 @@ resource "aws_api_gateway_method" "proxy_delete_user_root_post" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.delete_user_root.id
   http_method   = "POST"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "proxy_delete_user_root_post_response_200" {
@@ -2302,7 +2302,7 @@ resource "aws_api_gateway_method" "delete_user_root_options" {
   rest_api_id        = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id        = aws_api_gateway_resource.delete_user_root.id
   http_method        = "OPTIONS"
-  authorization      = "NONE"
+  authorization      = "AWS_IAM"
   request_parameters = { "method.request.header.JWT_TOKEN" = false }
 
 }
@@ -2410,7 +2410,7 @@ resource "aws_api_gateway_method" "proxy_change_auth_root_post" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.change_auth_root.id
   http_method   = "POST"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "proxy_change_auth_root_post_response_200" {
@@ -2434,7 +2434,7 @@ resource "aws_api_gateway_method" "change_auth_root_options" {
   rest_api_id        = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id        = aws_api_gateway_resource.change_auth_root.id
   http_method        = "OPTIONS"
-  authorization      = "NONE"
+  authorization      = "AWS_IAM"
   request_parameters = { "method.request.header.JWT_TOKEN" = false }
 
 }
@@ -2542,7 +2542,7 @@ resource "aws_api_gateway_method" "proxy_modify_post_status_root_post" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.modify_post_status_root.id
   http_method   = "POST"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "proxy_modify_post_status_root_post_response_200" {
@@ -2566,7 +2566,7 @@ resource "aws_api_gateway_method" "modify_post_status_root_options" {
   rest_api_id        = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id        = aws_api_gateway_resource.modify_post_status_root.id
   http_method        = "OPTIONS"
-  authorization      = "NONE"
+  authorization      = "AWS_IAM"
   request_parameters = { "method.request.header.JWT_TOKEN" = false }
 
 }
@@ -2673,7 +2673,7 @@ resource "aws_api_gateway_method" "proxy_get_dashboard_root_post" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.get_dashboard_root.id
   http_method   = "POST"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "proxy_get_dashboard_root_post_response_200" {
@@ -2697,7 +2697,7 @@ resource "aws_api_gateway_method" "get_dashboard_root_options" {
   rest_api_id        = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id        = aws_api_gateway_resource.get_dashboard_root.id
   http_method        = "OPTIONS"
-  authorization      = "NONE"
+  authorization      = "AWS_IAM"
   request_parameters = { "method.request.header.JWT_TOKEN" = false }
 
 }
@@ -2805,7 +2805,7 @@ resource "aws_api_gateway_method" "proxy_change_profile_root_post" {
   rest_api_id   = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id   = aws_api_gateway_resource.change_profile_root.id
   http_method   = "POST"
-  authorization = "NONE"
+  authorization = "AWS_IAM"
 
 }
 resource "aws_api_gateway_method_response" "proxy_change_profile_root_post_response_200" {
@@ -2829,7 +2829,7 @@ resource "aws_api_gateway_method" "change_profile_root_options" {
   rest_api_id        = aws_api_gateway_rest_api.apiLambda_ba.id
   resource_id        = aws_api_gateway_resource.change_profile_root.id
   http_method        = "OPTIONS"
-  authorization      = "NONE"
+  authorization      = "AWS_IAM"
   request_parameters = { "method.request.header.JWT_TOKEN" = false }
 
 }
